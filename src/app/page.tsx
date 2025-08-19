@@ -1,15 +1,21 @@
+import Navbar from './components/Navbar';
+import Hero from './sections/Hero';
+import About from './sections/About';
+import Projects from './sections/Projects';
 
 export default function Home() {
   return (
     <div className="">
       {/* SECTION 1 - HEADER + HERO */}
-      Hello, World!
+      <Hero />
+      {/* <Navbar /> */}
+      <Navbar />
 
-      {/* SECTION 2 - SKILLS */}
-
+      {/* SECTION 2 - ABOUT */}
+      <About />
 
       {/* SECTION 3 - PROJECTS */}
-
+      <Projects />
 
       {/* SECTION 4 - ABOUT ME + CONTACT */}
     </div>

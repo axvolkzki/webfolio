@@ -2,7 +2,7 @@
 
 import { get } from 'http';
 import Link from 'next/link';
-import { use, useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +36,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-gray-800 text-white p-4 sm:p-6 md:flex md:justify-between md:items-center">
+    <nav className="sticky top-0 bg-gray-800 text-white p-4 sm:p-6 md:flex md:justify-between md:items-center">
         <div className="container mx-auto flex justify-between items-center">
             <a href="" className="text-2xl font-bold">
                 WebFolio
@@ -49,6 +49,18 @@ export default function Navbar() {
 
                 <Link href="/about" className="mx-2 hover:text-gray-300">
                     About
+                </Link>
+
+                <Link href="/projects" className="mx-2 hover:text-gray-300">
+                    Projects
+                </Link>
+
+                <Link href="/blogs" className="mx-2 hover:text-gray-300">
+                    Blogs
+                </Link>
+
+                <Link href="/resume" className="mx-2 hover:text-gray-300">
+                    Resume
                 </Link>
 
                 <Link href="/contact" className="mx-2 hover:text-gray-300">
