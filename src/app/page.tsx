@@ -2,6 +2,8 @@ import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Projects from './sections/Projects';
+import Blogs from './sections/Blogs';
+import Contact from './sections/Contact';
 
 export default function Home() {
   return (
@@ -17,7 +19,11 @@ export default function Home() {
       {/* SECTION 3 - PROJECTS */}
       <Projects />
 
-      {/* SECTION 4 - ABOUT ME + CONTACT */}
+      {/* SECTION 4 - BLOGS */}
+      <Blogs />
+
+      {/* SECTION 5 - CONTACT */}
+      <Contact />
     </div>
     // <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
     //   <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
