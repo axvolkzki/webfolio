@@ -1,8 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
-import Projects from './sections/Projects';
-import Blogs from './sections/Blogs';
+import Portfolio from './sections/Portfolio';
 import Contact from './sections/Contact';
 
 export default function Home() {
@@ -10,19 +9,17 @@ export default function Home() {
     <div className="">
       {/* SECTION 1 - HEADER + HERO */}
       <Hero />
+
       {/* <Navbar /> */}
       <Navbar />
 
       {/* SECTION 2 - ABOUT */}
       <About />
 
-      {/* SECTION 3 - PROJECTS */}
-      <Projects />
+      {/* SECTION 3 - PORTFOLIO */}
+      <Portfolio />
 
-      {/* SECTION 4 - BLOGS */}
-      <Blogs />
-
-      {/* SECTION 5 - CONTACT */}
+      {/* SECTION 4 - CONTACT */}
       <Contact />
     </div>
     // <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
