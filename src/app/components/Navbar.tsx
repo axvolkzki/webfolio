@@ -58,8 +58,7 @@ export default function Navbar() {
   const links = [
     { href: "home", label: "Home" },
     { href: "about", label: "About" },
-    { href: "projects", label: "Projects" },
-    { href: "blogs", label: "Blogs" },
+    { href: "portfolio", label: "Portfolio" },
     { href: "contact", label: "Contact" },
   ];
 
@@ -89,7 +88,7 @@ export default function Navbar() {
     // <nav className="sticky top-0 bg-gray-800 text-white p-4 sm:p-6 md:flex md:justify-between md:items-center">
     // <nav className="sticky top-0 bg-gray-800 text-white p-2 md:flex md:justify-between md:items-center"></nav>
     
-    <nav className="sticky top-0 bg-gray-800 text-white py-2">
+    <nav className="sticky top-0 bg-gray-800 text-white py-4 px-8 z-50 shadow-lg">
       <div className="container mx-auto flex justify-center items-center gap-6 md:gap-10">
         {links.map(({ href, label }) => (
           <Link
