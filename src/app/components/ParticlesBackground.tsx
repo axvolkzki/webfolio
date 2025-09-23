@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
 import React from 'react'
 import Particle from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
-import { Engine } from 'tsparticles-engine'
+import { Engine, Opacity } from 'tsparticles-engine'
 
 export default function ParticlesBackground() {
 
@@ -12,11 +12,25 @@ export default function ParticlesBackground() {
   }
 
   return (
-    <div>
+    <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
       <Particle
         id="tsparticles"
         init={loadingParticles}
+        style={{
+          width: '100%',
+          height: '100%',
+          pointerEvents: 'none'
+        }}
         options={{
+          fullScreen: {
+            enable: true,
+            zIndex: 0
+          },
+          background: {
+            color: {
+              value: "transparent"
+            }
+          },
           fpsLimit: 60,
           particles: {
             number: {
