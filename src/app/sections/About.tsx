@@ -5,10 +5,8 @@ import Link from 'next/link'
 
 export default function About() {
   return (
-    <section id="about" className='relative z-20 h-screen bg-gray-500 text-white py-28 sm:px-6 lg:px-8'>
-      <div className='flex flex-col items-center'>
-        <h2 className='text-4xl font-bold mb-8'>About Me</h2>
-      </div>
+    <section id="about" className='relative z-20 h-screen bg-gray-500 text-white flex flex-col items-center py-28 sm:px-6 lg:px-8'>
+      <h2 className='text-4xl font-bold mb-8'>About Me</h2>
 
       <div className='grid grid-cols-2 gap-12 px-20'>
         {/* Left column */}
