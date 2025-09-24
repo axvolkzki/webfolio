@@ -89,7 +89,7 @@ export default function Navbar() {
     // <nav className="sticky top-0 bg-gray-800 text-white p-2 md:flex md:justify-between md:items-center"></nav>
     
     <nav className="sticky top-0 bg-gray-800 text-white py-4 px-8 z-50 shadow-lg">
-      <div className="container mx-auto flex justify-center items-center gap-6 md:gap-10">
+      <div className="container mx-auto flex justify-end items-center gap-6 md:gap-10">
         {links.map(({ href, label }) => (
           <Link
             key={href}
