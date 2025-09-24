@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { images } from '@/app/assets/images'
+import Link from 'next/link'
 
 export default function About() {
   return (
@@ -20,17 +21,22 @@ export default function About() {
           <p className='text-lg text-gray-300'>I am a passionate web developer with experience in building dynamic and responsive web applications.</p>
 
           <div className='grid grid-cols-2 gap-12 px-20'>
-            {/* left button - download resume */}
+            {/* left button - clickable resume */}
             <div className='mt-6'>
-              <a href="/Amelia_Abenoja_Resume.pdf" download className='inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300'>
-                Download Resume
+              <a 
+                href="/files/Amelia_Abenoja_Resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className='inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300'
+              >
+                Open Resume
               </a>
             </div>
 
             {/* right button - view projects */}
             <div className='mt-6'>
-              <a href="#projects" className='inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300'>
-                View Projects
+              <a href="#portfolio" className='inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300'>
+                View Portfolio
               </a>
             </div>
           </div>
