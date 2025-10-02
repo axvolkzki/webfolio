@@ -5,19 +5,25 @@ import ParticlesBackground from '../components/ParticlesBackground'
 
 export default function Hero() {
   return (
-    <section className='relative h-screen w-full flex flex-col items-center justify-center text-center bg-black text-white p-8 overflow-hidden z-10'>
+    <section className='relative h-screen w-full flex flex-col items-center justify-center text-center bg-background p-8 overflow-hidden z-10'>
       <ParticlesBackground />
 
       <div className="relative z-10">
-        <h1 className="text-4xl font-bold">Welcome to AJ's</h1>
-        <p className="text-4xl font-bold">Portfolio Website</p>
-        <button 
-          className="mt-6 px-6 py-2 bg-white text-black rounded-xl hover:bg-gray-200 transition-all duration-200 hover:scale-105 active:scale-95 active:shadow-inner shadow-lg hover:shadow-xl cursor-pointer" 
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold text-foreground">Welcome to AJ's</h1>
+          <p className="text-4xl font-bold text-foreground">Portfolio Website</p>
+        </div>
+
+        <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden rounded-lg bg-gradient-to-br from-accent-teal to-accent-lime hover:scale-110 transition-transform duration-300 ease-out"
           onClick={() => {
             document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
           }}
         >
-          Get To Know Me
+          <span className="relative px-5 py-2.5 bg-background rounded-md">
+            <span className="bg-gradient-to-r from-accent-teal to-accent-lime bg-clip-text text-transparent font-medium">
+              Get To Know Me
+            </span>
+          </span>
         </button>
       </div>
     </section>
