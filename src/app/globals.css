@@ -2,10 +2,10 @@
 
 /* Dark blue-black with teal-lime accents */
 :root {
-  --background: #0a0d14;        /* Dark blue-black */
+  --background: #0c0c0c;         /* Smokey black background */
   --foreground: #ffffff;         /* Pure white text */
-  --surface: #111827;            /* Elevated surfaces (gray-900) */
-  --border: #1f2937;             /* Subtle borders (gray-800) */
+  --surface: #1d1d1d;            /* Eerie black surfaces */
+  --border: #242424;             /* Raisin black borders */
   --text-secondary: #9ca3af;     /* Muted gray text */
   
   /* Gradient colors */
