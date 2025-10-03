@@ -38,52 +38,37 @@ export default function Portfolio() {
   const certificates = [
     {
       id: 1,
-      title: 'Ruby Certificate 2023',
+      title: 'Go Certificate 2023',
       issuer: 'SoloLearn',
-      date: 'Apr 2023',
-      image: images.certificates.CertRuby2023,
-      link: '#'
+      date: 'March 06, 2023',
+      image: images.certificates.CertGo2023,
+      link: 'https://www.sololearn.com/certificates/CT-OPOPL8BP'
     },
     {
       id: 2,
-      title: 'Certificate Two',
-      issuer: 'Issuer Two',
-      date: 'Jun 2023',
-      image: images.certificates.CertRuby2023,
-      link: '#'
+      title: 'Kotlin Certificate 2023',
+      issuer: 'SoloLearn',
+      date: 'March 20, 2023',
+      image: images.certificates.CertKotlin2023,
+      link: 'https://www.sololearn.com/certificates/CT-MJI27BGB'
     },
     {
       id: 3,
-      title: 'Certificate Three',
-      issuer: 'Issuer Three',
-      date: 'Dec 2023',
-      image: images.certificates.CertRuby2023,
-      link: '#'
+      title: 'R Certificate 2023',
+      issuer: 'SoloLearn',
+      date: 'April 03, 2023',
+      image: images.certificates.CertR2023,
+      link: 'https://www.sololearn.com/certificates/CT-CRXVQXG4'
     },
     {
       id: 4,
-      title: 'Certificate Four',
-      issuer: 'Issuer Four',
-      date: 'Mar 2024',
+      title: 'Ruby Certificate 2023',
+      issuer: 'SoloLearn',
+      date: 'April 03, 2024',
       image: images.certificates.CertRuby2023,
-      link: '#'
+      link: 'https://www.sololearn.com/certificates/CT-X3IN8B2N'
     },
-    {
-      id: 5,
-      title: 'Certificate Five',
-      issuer: 'Issuer Five',
-      date: 'May 2024',
-      image: images.certificates.CertRuby2023,
-      link: '#'
-    },
-    {
-      id: 6,
-      title: 'Certificate Six',
-      issuer: 'Issuer Six',
-      date: 'Jun 2024',
-      image: images.certificates.CertRuby2023,
-      link: '#'
-    }
+    // Add more certificates as needed
   ]
 
   const techStack = [
@@ -118,16 +103,29 @@ export default function Portfolio() {
   );
 
   const renderCertificates = () => (
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 bg-amber-600 px-8 w-full max-w-7xl'>
+  <div className='w-full h-full overflow-y-auto scrollbar-hide'>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4'>
       {certificates.map(certificate => (
-        <div key={certificate.id} className='bg-gray-800 p-1 hover:shadow-xl transition-shadow duration-300'>
-          <Image src={certificate.image} alt={certificate.title} className='w-full h-56 object-cover' />
-          {/* <h3 className='text-2xl font-semibold mb-4'>{certificate.title}</h3>
-          <p className='text-gray-300'>{certificate.issuer}</p>
-          <p className='text-gray-300'>{certificate.date}</p> */}
+        <div 
+          key={certificate.id} 
+          className='relative p-0.5 rounded-lg bg-gradient-to-br from-accent-teal to-accent-lime hover:scale-105 transition-transform duration-300'
+        >
+          <div className='bg-surface rounded-md overflow-hidden h-full'>
+            <a href={certificate.link} target="_blank" rel="noopener noreferrer" className='absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-md text-sm hover:bg-opacity-75 transition'>
+              View
+            </a>
+            <Image 
+              src={certificate.image} 
+              alt={certificate.title} 
+              className='w-full h-full object-cover' 
+              width={250}
+              height={250}
+            />
+          </div>
         </div>
       ))}
     </div>
+  </div>
   );
 
   const renderTechStack = () => (
@@ -269,7 +267,7 @@ export default function Portfolio() {
 
 
       {/* Content Area */}
-      <div className="min-h-96 transition-all duration-300">
+      <div className="w-full min-h-96 transition-all duration-300">
         {renderContent()}
       </div>
     </section>
