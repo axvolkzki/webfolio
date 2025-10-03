@@ -13,15 +13,15 @@ export default function Portfolio() {
       id: 1,
       title: 'Project One',
       description: 'A brief description of Project One.',
-      image: '/path/to/image1.jpg',
+      image: images.projects.projectCattoo,
       tech: ['React', 'Node.js', 'MongoDB'],
-      link: '#'
+      link: 'https://github.com/axvolkzki'
     },
     {
       id: 2,
       title: 'Project Two',
       description: 'A brief description of Project Two.',
-      image: '/path/to/image2.jpg',
+      image: images.projects.projectCattoo,
       tech: ['React', 'Express', 'MySQL'],
       link: '#'
     },
@@ -29,10 +29,19 @@ export default function Portfolio() {
       id: 3,
       title: 'Project Three',
       description: 'A brief description of Project Three.',
-      image: '/path/to/image3.jpg',
+      image: images.projects.projectCattoo,
       tech: ['Vue', 'Firebase'],
       link: '#'
-    }
+    },
+    {
+      id: 4,
+      title: 'Project Four',
+      description: 'A brief description of Project Four.',
+      image: images.projects.projectCattoo,
+      tech: ['Angular', 'Django', 'PostgreSQL'],
+      link: '#'
+    },
+    // Add more projects as needed
   ]
 
   const certificates = [
@@ -171,14 +180,45 @@ export default function Portfolio() {
   ]
 
   const renderProjects = () => (
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl'>
-      {projects.map(project => (
-        <div key={project.id} className='bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
-          <h3 className='text-2xl font-semibold mb-4'>{project.title}</h3>
-          <p className='text-gray-300'>{project.description}</p>
-          {/* Add image, tech stack, and link as needed */}
-        </div>
-      ))}
+    <div className='w-full h-full overflow-y-auto scrollbar-hide'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4'>
+        {projects.map(project => (
+          <div 
+            key={project.id} 
+            className='relative p-0.5 rounded-lg bg-gradient-to-br from-accent-teal to-accent-lime hover:scale-105 transition-transform duration-300'
+          >
+            <div className='bg-surface rounded-md overflow-hidden h-full flex flex-col'>
+              <a href={project.link
+} target="_blank" rel="noopener noreferrer" className='absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-md text-sm hover:bg-opacity-75 transition'>
+                View
+              </a>
+
+              <Image
+                src={project.image}
+                alt={project.title}
+                className='w-full h-48 object-cover'
+                width={400}
+                height={200}
+              />
+
+              <div className='p-4 flex-1 flex flex-col'>
+                <h3 className='text-lg font-semibold mb-2'>{project.title}</h3>
+                <p className='text-sm text-text-secondary flex-1'>{project.description}</p>
+                <div className='mt-4'>
+                  {project.tech.map((tech, index) => (
+                    <span
+                      key={index}
+                      className='inline-block bg-background text-text-secondary text-xs px-2 py-1 rounded-full mr-2 mb-2'
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 
@@ -388,7 +428,7 @@ export default function Portfolio() {
 
 
       {/* Content Area */}
-      <div className="w-full min-h-96 transition-all duration-300">
+      <div className="w-full min-h-96 transition-all duration-300 bg-accent-lime">
         {renderContent()}
       </div>
     </section>
