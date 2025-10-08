@@ -15,7 +15,8 @@ export default function Portfolio() {
       description: 'A brief description of Project One.',
       image: images.projects.projectCattoo,
       tech: ['React', 'Node.js', 'MongoDB'],
-      link: 'https://github.com/axvolkzki'
+      demoLink: 'https://github.com/axvolkzki',
+      sourceCodeLink: 'https://github.com/axvolkzki'
     },
     {
       id: 2,
@@ -23,7 +24,8 @@ export default function Portfolio() {
       description: 'A brief description of Project Two.',
       image: images.projects.projectCattoo,
       tech: ['React', 'Express', 'MySQL'],
-      link: '#'
+      demoLink: '#',
+      sourceCodeLink: 'https://github.com/axvolkzki'
     },
     {
       id: 3,
@@ -31,7 +33,8 @@ export default function Portfolio() {
       description: 'A brief description of Project Three.',
       image: images.projects.projectCattoo,
       tech: ['Vue', 'Firebase'],
-      link: '#'
+      demoLink: '#',
+      sourceCodeLink: 'https://github.com/axvolkzki'
     },
     {
       id: 4,
@@ -39,7 +42,8 @@ export default function Portfolio() {
       description: 'A brief description of Project Four.',
       image: images.projects.projectCattoo,
       tech: ['Angular', 'Django', 'PostgreSQL'],
-      link: '#'
+      demoLink: '#',
+      sourceCodeLink: 'https://github.com/axvolkzki'
     },
     // Add more projects as needed
   ]
@@ -188,11 +192,6 @@ export default function Portfolio() {
             className='relative p-0.5 rounded-lg bg-gradient-to-br from-accent-teal to-accent-lime hover:scale-105 transition-transform duration-300'
           >
             <div className='bg-surface rounded-md overflow-hidden h-full flex flex-col'>
-              <a href={project.link
-} target="_blank" rel="noopener noreferrer" className='absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-md text-sm hover:bg-opacity-75 transition'>
-                View
-              </a>
-
               <Image
                 src={project.image}
                 alt={project.title}
@@ -205,14 +204,24 @@ export default function Portfolio() {
                 <h3 className='text-lg font-semibold mb-2'>{project.title}</h3>
                 <p className='text-sm text-text-secondary flex-1'>{project.description}</p>
                 <div className='mt-4'>
-                  {project.tech.map((tech, index) => (
+                  <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                    <span className='inline-block bg-background text-text-secondary text-xs px-2 py-1 rounded-full mr-2 mb-2'>
+                      Live Demo
+                    </span>
+                  </a>
+                  <a href={project.sourceCodeLink} target="_blank" rel="noopener noreferrer">
+                    <span className='inline-block bg-background text-text-secondary text-xs px-2 py-1 rounded-full mr-2 mb-2'>
+                      Source Code
+                    </span>
+                  </a>
+                  {/* {project.tech.map((tech, index) => (
                     <span
                       key={index}
                       className='inline-block bg-background text-text-secondary text-xs px-2 py-1 rounded-full mr-2 mb-2'
                     >
                       {tech}
                     </span>
-                  ))}
+                  ))} */}
                 </div>
               </div>
             </div>
@@ -428,7 +437,7 @@ export default function Portfolio() {
 
 
       {/* Content Area */}
-      <div className="w-full min-h-96 transition-all duration-300 bg-accent-lime">
+      <div className="w-full min-h-96 transition-all duration-300">
         {renderContent()}
       </div>
     </section>
