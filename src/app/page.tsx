@@ -3,6 +3,7 @@ import Hero from './sections/Hero';
 import About from './sections/About';
 import Portfolio from './sections/Portfolio';
 import Contact from './sections/Contact';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* SECTION 4 - CONTACT */}
       <Contact />
+
+      {/* FOOTER */}
+      <Footer />
     </div>
     // <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
     //   <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
