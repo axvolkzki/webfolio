@@ -4,10 +4,14 @@ import About from './sections/About';
 import Portfolio from './sections/Portfolio';
 import Contact from './sections/Contact';
 import Footer from './components/Footer';
+import ParticlesBackground from './components/ParticlesBackground';
 
 export default function Home() {
   return (
     <div className="">
+      {/* PARTICLES BACKGROUND */}
+      <ParticlesBackground />
+
       {/* SECTION 1 - HEADER + HERO */}
       <Hero />
 
