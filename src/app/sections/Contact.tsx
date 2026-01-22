@@ -5,7 +5,7 @@ export default function Contact() {
     <section id="contact" className='relative z-20 flex flex-col text-white py-20 sm:px-6 lg:px-28'>
       <h2 className='text-4xl font-bold mb-8 text-center'>Contact</h2>
       
-      <div className='grid grid-cols-2 gap-12'>
+      <div className='grid grid-cols-2 gap-12 items-center items-justify-center'>
         {/* Left column */}
         <div className='col-span-2 sm:col-span-1'>
           <h3 className='text-2xl font-bold mb-2 text-center'>Connect with Me</h3>
@@ -161,19 +161,25 @@ export default function Contact() {
         </div>
 
         {/* Right column */}
-        <div className='col-span-2 sm:col-span-1 flex justify-center bg-amber-800'>
-          <div className='flex flex-col w-full max-w-md bg-gray-700'>
+        <div className='col-span-2 sm:col-span-1 flex justify-center'>
+          <div className='flex flex-col w-full max-w-md bg-background p-6 rounded-lg shadow-lg'>
             {/* name */}
-            <input type="text" placeholder="Your Name" className='mb-4 p-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600' />
+            <input type="text" placeholder="Your Name" className='mb-4 p-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-accent-teal' />
 
             {/* email */}
-            <input type="email" placeholder="Your Email" className='mb-4 p-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 required:focus:ring-red-600' />
+            <input 
+              type="email" 
+              placeholder="Your Email"
+              className='mb-4 p-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-accent-teal required:focus:ring-red-600' />
 
             {/* message */}
-            <textarea placeholder="Your Message" className='mb-4 p-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 h-32'></textarea>
+            <textarea 
+              placeholder="Your Message" 
+              className='mb-4 p-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-accent-teal h-32'
+            ></textarea>
 
             {/* submit button */}
-            <button className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600'>Send Message</button>
+            <button className='bg-gradient-to-r from-accent-teal to-accent-lime hover:opacity-80 transition-opacity text-black font-bold py-2 px-4 rounded-lg focus:outline-none focus:border-transparent focus:ring-2 focus:ring-accent-teal'>Send Message</button>
           </div>
         </div>
       </div>
