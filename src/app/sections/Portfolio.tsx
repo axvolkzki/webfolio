@@ -12,39 +12,30 @@ export default function Portfolio() {
   const projects = [
     {
       id: 1,
-      title: 'Project One',
-      description: 'A brief description of Project One.',
+      title: 'BookCol',
+      description: 'Built a Kotlin-based mobile app for managing personal book collections with Firebase backend, featuring barcode scanning via device camera and Open Library API integration for automatic book information retrieval.',
       image: images.projects.projectCattoo,
-      tech: ['React', 'Node.js', 'MongoDB'],
-      demoLink: 'https://github.com/axvolkzki',
-      sourceCodeLink: 'https://github.com/axvolkzki'
+      tech: ['Kotlin', 'Firebase', 'Open Library API', 'Android Studio'],
+      demoLink: '#',
+      sourceCodeLink: 'https://github.com/axvolkzki/MOBDEVE-MCO'
     },
     {
       id: 2,
-      title: 'Project Two',
-      description: 'A brief description of Project Two.',
-      image: images.projects.projectCattoo,
-      tech: ['React', 'Express', 'MySQL'],
+      title: 'Online Enrollment System',
+      description: 'Created a fault-tolerant Ruby on Rails enrollment platform with authentication and course management, utilizing Docker-based microservices architecture for independent scaling and failure isolation.',
+      image: images.projects.projectCathuh,
+      tech: ['Ruby on Rails', 'Docker'],
       demoLink: '#',
-      sourceCodeLink: 'https://github.com/axvolkzki'
+      sourceCodeLink: 'https://github.com/axvolkzki/STDISCM-P4'
     },
     {
       id: 3,
-      title: 'Project Three',
-      description: 'A brief description of Project Three.',
+      title: 'Producer-Consumer Simulation',
+      description: 'Developed a multi-threaded client-server system with socket-based communication, leaky bucket rate limiting, and a GUI for real-time video upload, preview, and playback.',
       image: images.projects.projectCattoo,
-      tech: ['Vue', 'Firebase'],
+      tech: ['Ruby on Rails', 'Docker'],
       demoLink: '#',
-      sourceCodeLink: 'https://github.com/axvolkzki'
-    },
-    {
-      id: 4,
-      title: 'Project Four',
-      description: 'A brief description of Project Four.',
-      image: images.projects.projectCattoo,
-      tech: ['Angular', 'Django', 'PostgreSQL'],
-      demoLink: '#',
-      sourceCodeLink: 'https://github.com/axvolkzki'
+      sourceCodeLink: 'https://github.com/kndonetm/stdiscm-p3-producer'
     },
     // Add more projects as needed
   ]
