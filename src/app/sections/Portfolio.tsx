@@ -14,7 +14,7 @@ export default function Portfolio() {
       id: 1,
       title: 'BookCol',
       description: 'Built a Kotlin-based mobile app for managing personal book collections with Firebase backend, featuring barcode scanning via device camera and Open Library API integration for automatic book information retrieval.',
-      image: images.projects.projectCattoo,
+      image: images.projects.projectBookCol,
       tech: ['Kotlin', 'Firebase', 'Open Library API', 'Android Studio'],
       demoLink: '#',
       sourceCodeLink: 'https://github.com/axvolkzki/MOBDEVE-MCO'
@@ -32,7 +32,7 @@ export default function Portfolio() {
       id: 3,
       title: 'Producer-Consumer Simulation',
       description: 'Developed a multi-threaded client-server system with socket-based communication, leaky bucket rate limiting, and a GUI for real-time video upload, preview, and playback.',
-      image: images.projects.projectCattoo,
+      image: images.projects.projectProducerConsumer,
       tech: ['Ruby on Rails', 'Docker'],
       demoLink: '#',
       sourceCodeLink: 'https://github.com/kndonetm/stdiscm-p3-producer'
