@@ -172,6 +172,13 @@ export default function Contact() {
               placeholder="Your Email"
               className='mb-4 p-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-accent-teal required:focus:ring-red-600' />
 
+            {/* subject */}
+            <input 
+              type="text" 
+              placeholder="Subject" 
+              className='mb-4 p-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-accent-teal' 
+            />
+            
             {/* message */}
             <textarea 
               placeholder="Your Message" 
