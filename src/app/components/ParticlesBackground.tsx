@@ -1,18 +1,18 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react'
-import Particle from 'react-tsparticles'
-import { loadFull } from 'tsparticles'
-import { Engine, Container } from 'tsparticles-engine'
+import Particles, { initParticlesEngine } from '@tsparticles/react'
+import { loadSlim } from '@tsparticles/slim'
+import type { Engine, Container } from '@tsparticles/engine'
 
 export default function ParticlesBackground() {
   const containerRef = useRef<Container | null>(null);
+  const [init, setInit] = React.useState(false);
 
   async function loadingParticles(engine: Engine) {
-    await loadFull(engine)
+    await loadSlim(engine)
   }
 
-  // This function will be called when particles are ready
   const particlesLoaded = async (container?: Container) => {
     if (container) {
       containerRef.current = container;
@@ -20,17 +20,19 @@ export default function ParticlesBackground() {
   };
 
   useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => setInit(true));
+
     const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return;
 
-      // Get the hero section element (adjust selector to match your hero section)
       const heroSection = document.querySelector('#hero, [data-section="hero"], section:first-of-type');
       
       if (heroSection) {
         const rect = heroSection.getBoundingClientRect();
         const isInHero = e.clientY >= rect.top && e.clientY <= rect.bottom;
         
-        // Enable/disable interactivity based on mouse position
         if (containerRef.current.options.interactivity?.events?.onHover) {
           containerRef.current.options.interactivity.events.onHover.enable = isInHero;
         }
@@ -44,12 +46,14 @@ export default function ParticlesBackground() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  if (!init) {
+    return null; // or a loading spinner
+  }
+
   return (
     <div className="fixed inset-0 z-0 w-full h-full pointer-events-none">
-      <Particle
+      <Particles
         id="tsparticles"
-        init={loadingParticles}
-        loaded={particlesLoaded}
         style={{
           width: '100%',
           height: '100%',
@@ -72,36 +76,28 @@ export default function ParticlesBackground() {
               value: 80,
               density: {
                 enable: true,
-                area: 800
+                width: 800
               }
             },
             color: {
               value: ['#10b981', '#14b8a6', '#2dd4bf', '#5eead4', '#22c55e', '#34d399']
             },
-            stroke: {
-              width: 0,
-              color: '#000000'
-            },
             shape: {
               type: 'circle'
             },
             opacity: {
-              value: 0.6,
-              random: true,
+              value: { min: 0.3, max: 0.6 },
               animation: {
                 enable: true,
                 speed: 0.5,
-                minimumValue: 0.3,
                 sync: false
               }
             },
             size: {
               value: { min: 1, max: 3 },
-              random: true,
               animation: {
                 enable: true,
                 speed: 2,
-                minimumValue: 0.5,
                 sync: false
               }
             },
@@ -123,8 +119,7 @@ export default function ParticlesBackground() {
               },
               attract: {
                 enable: false,
-                rotateX: 600,
-                rotateY: 1200
+                rotate: { x: 600, y: 1200 }
               }
             }
           },
@@ -132,14 +127,14 @@ export default function ParticlesBackground() {
             detectsOn: 'window',
             events: {
               onHover: {
-                enable: true, // Will be controlled dynamically
+                enable: true,
                 mode: 'grab'
               },
               onClick: {
-                enable: true, // Will be controlled dynamically
+                enable: true,
                 mode: 'push'
               },
-              resize: true
+              resize: { enable: true }
             },
             modes: {
               grab: {
@@ -154,7 +149,7 @@ export default function ParticlesBackground() {
               }
             }
           },
-          retinaDetect: true
+          detectRetina: true
         }}
       />
     </div>
