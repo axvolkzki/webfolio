@@ -8,7 +8,7 @@ export default function Hero() {
 
       <div className="relative">
         <div className="mb-8">
-          <h1 className="sm:text-4xl lg:text-5xl font-bold text-foreground">Hi! I'm Amelia</h1>
+          <h1 className="sm:text-4xl lg:text-5xl font-bold text-foreground">{"Hi! I'm Amelia"}</h1>
           <p className="text-4xl font-bold text-foreground">Checkout my Webfolio</p>
         </div>
 

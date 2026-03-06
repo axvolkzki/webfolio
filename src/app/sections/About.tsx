@@ -13,7 +13,7 @@ export default function About() {
         {/* Left column */}
         <div className='flex flex-col justify-center text-left order-2 sm:order-1'>
           <h3 className='text-2xl font-semibold mb-4'>
-            Hi! I'm <br />
+            {"Hi! I'm "}<br />
             <span className="text-3xl">Amelia Abenoja</span>
           </h3>
 

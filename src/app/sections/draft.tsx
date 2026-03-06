@@ -28,7 +28,7 @@ export default function Draft() {
           {/* connect with me */}
           <div className='flex flex-col items-center mb-8 w-full max-w-md bg-gray-700'>
             <h2 className='text-3xl font-bold mb-4'>Connect with Me</h2>
-            <p className='text-lg text-gray-300 mb-4'>I'm always open to discussing new projects and opportunities.</p>
+            <p className='text-lg text-gray-300 mb-4'>{"I'm always open to discussing new projects and opportunities."}</p>
             <div className='flex space-x-4'>
               <a href="https://twitter.com/yourhandle" className='text-blue-400 hover:underline'>Twitter</a>
               <a href="https://linkedin.com/in/yourhandle" className='text-blue-600 hover:underline'>LinkedIn</a>
